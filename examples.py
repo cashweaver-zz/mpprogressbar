@@ -2,13 +2,13 @@ import mpprogressbar, random, time
 import multiprocessing as mp
 
 def download(status, pname, *fargs):
-    count = random.randint(5, fargs[0][2])
+    count = random.randint(5, fargs[0][1])
     for i in range(count):
         status.put([pname, (i+1.0)/count])
         time.sleep(0.1)
 
 def main():
-    mppb = mpprogressbar.mpprogressbar()
+    mppb = mpprogressbar.MPProgressbar()
     for i in range(mp.cpu_count()):
         mppb.append("Process %d" % (i+1))
     mppb.start(
