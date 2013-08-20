@@ -6,4 +6,4 @@ An extension of the [progressbar](https://pypi.python.org/pypi/progressbar) pack
 How to
 ------
 
-Check out [example.py](https://github.com/DeusExVerbum/mpprogressbar/blob/master/example.py) to get started with implementation.
+Check out *example.py* to get started with implementation.
