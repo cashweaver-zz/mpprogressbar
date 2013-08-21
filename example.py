@@ -1,5 +1,7 @@
-import random, time, pbfmp, sys
+import random, time, sys, mpprogressbar
 import multiprocessing as mp
+
+# This file would normally exist in the parent directory of mpprogressbar/
 
 def do_stuff(sub_nums, header, pstatus, pid, pb_maxval):
     """
@@ -95,12 +97,12 @@ def mppb_example():
     # Define progress bar in the same way you would with the regular
     # progressbar package.
     #   NOTE: maxval must equal the sum of maxvals for all processes
-    pbars.append(pbfmp.ProgressBar(
+    pbars.append(mpprogressbar.ProgressBar(
         widgets=[
             'All Procs', ' ',
-            pbfmp.Percentage(), ' ',
-            pbfmp.Bar('#', '[', ']'), ' ',
-            pbfmp.ETA()],
+            mpprogressbar.Percentage(), ' ',
+            mpprogressbar.Bar('#', '[', ']'), ' ',
+            mpprogressbar.ETA()],
             maxval=len(nums)
         ).start())
 
@@ -123,12 +125,12 @@ def mppb_example():
 
         # Define progress bar in the same way you would with the regular
         # progressbar package
-        pbars.append(pbfmp.ProgressBar(
+        pbars.append(mpprogressbar.ProgressBar(
             widgets=[
                 (pname_prefix + str(i+1)), ' ',
-                pbfmp.Percentage(), ' ',
-                pbfmp.Bar('-', '[', ']'), ' ',
-                pbfmp.ETA()],
+                mpprogressbar.Percentage(), ' ',
+                mpprogressbar.Bar('-', '[', ']'), ' ',
+                mpprogressbar.ETA()],
                 maxval=pb_maxval
             ).start())
 
